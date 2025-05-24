@@ -1,0 +1,16 @@
+body{
+   font-family: Arial, serif;
+   background: transparent;
+}
+
+title{
+    font-family: Aria,serif;
+    color: purple;
+}
+        
+h1{
+    font-family: Arial, sans-serif; 
+    color: blue;
+    margin: 0;
+    padding: 20px;
+}
