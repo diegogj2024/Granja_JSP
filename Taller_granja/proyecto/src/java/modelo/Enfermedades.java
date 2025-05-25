@@ -1,5 +1,7 @@
 package modelo;
 
+import java.sql.SQLException;
+
 
 public class Enfermedades {
     private String codigo_enfermedad;
@@ -70,6 +72,10 @@ public class Enfermedades {
         this.observaciones = observaciones;
     }
     
-    
+    public void conexionBd() throws SQLException{
+        conexion objconexion=new conexion();
+        objconexion.recibirEnfermedades(this.codigo_enfermedad,this.corral,this.Fecha_registro,this.Humedad_del_terreno,this.Nombre_enfermedad,this.Tratamiento_aplicado,this.observaciones);
+        
+    }
     
 }

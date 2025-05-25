@@ -1,5 +1,7 @@
 package modelo;
 
+import java.sql.SQLException;
+
 public class Huertos {
     private int id_corral;
     private String produccion;
@@ -33,6 +35,10 @@ public class Huertos {
         this.ubicacion_huerto = ubicacion_huerto;
     }
     
-
+    public void conexionBd() throws SQLException{
+        conexion objconexion=new conexion();
+        objconexion.recibirHuertos(this.id_corral,this.produccion,this.ubicacion_huerto);
+        
+    }
     
 }

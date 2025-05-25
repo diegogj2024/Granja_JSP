@@ -1,5 +1,7 @@
 package modelo;
 
+import java.sql.SQLException;
+
 public class Producto {
     private String codigo_cultivo;
     private String tipo_cultivo;
@@ -42,5 +44,9 @@ public class Producto {
         this.frecuencia_produccion = frecuencia_produccion;
     }
     
-
+    public void conexionBd() throws SQLException{
+        conexion objconexion=new conexion();
+        objconexion.recibirProductos(this.codigo_cultivo,this.tipo_cultivo,this.metodo_produccion,this.frecuencia_produccion);
+        
+    }
 }
