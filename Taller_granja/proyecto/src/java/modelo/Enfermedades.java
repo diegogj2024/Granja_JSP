@@ -1,6 +1,6 @@
 package modelo;
 
-import java.sql.SQLException;
+
 
 
 public class Enfermedades {

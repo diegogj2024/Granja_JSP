@@ -1,6 +1,5 @@
 package modelo;
 
-import java.sql.SQLException;
 
 public class Huertos {
     private int id_corral;
