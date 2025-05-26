@@ -33,12 +33,5 @@ public class Huertos {
 
     public void setUbicacion_huerto(String ubicacion_huerto) {
         this.ubicacion_huerto = ubicacion_huerto;
-    }
-    
-    public void conexionBd() throws SQLException{
-        conexion objconexion=new conexion();
-        objconexion.recibirHuertos(this.id_corral,this.produccion,this.ubicacion_huerto);
-        
-    }
-    
+    }   
 }

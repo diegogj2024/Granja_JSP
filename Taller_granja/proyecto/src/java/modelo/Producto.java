@@ -43,10 +43,4 @@ public class Producto {
     public void setFrecuencia_produccion(String frecuencia_produccion) {
         this.frecuencia_produccion = frecuencia_produccion;
     }
-    
-    public void conexionBd() throws SQLException{
-        conexion objconexion=new conexion();
-        objconexion.recibirProductos(this.codigo_cultivo,this.tipo_cultivo,this.metodo_produccion,this.frecuencia_produccion);
-        
-    }
 }

@@ -11,9 +11,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Enfermedades;
 import modelo.Huertos;
 import modelo.Producto;
+import modelo.conexion;
 
 /**
  *
@@ -66,6 +70,13 @@ public class Servlet extends HttpServlet {
             objProducto.setTipo_cultivo(tipo_cultivo);
             objProducto.setMetodo_produccion(metodo_produccion);
             objProducto.setFrecuencia_produccion(frecuencia_produccion);
+            conexion objconexion=new conexion();
+            try {
+                objconexion.recibirProductos(codigo_cultivo,tipo_cultivo,metodo_produccion,frecuencia_produccion);
+            } catch (SQLException ex) {
+                Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }else if(dato=="huertos"){
             int id_corral=Integer.parseInt(request.getParameter("id_corral"));
             String produccion=request.getParameter("produccion");
@@ -74,6 +85,12 @@ public class Servlet extends HttpServlet {
             objHuertos.setId_corral(id_corral);
             objHuertos.setProduccion(produccion);
             objHuertos.setUbicacion_huerto(ubicacion_huerto);
+            conexion objconexion=new conexion();
+            try {
+                objconexion.recibirHuertos(id_corral,produccion,ubicacion_huerto);
+            } catch (SQLException ex) {
+                Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }else if(dato=="enfermedades"){
             String codigo_enfermedad=request.getParameter("codigo_enfermedad");
             String corral=request.getParameter("corral");
@@ -90,6 +107,12 @@ public class Servlet extends HttpServlet {
             objEnfermedades.setNombre_enfermedad(Nombre_enfermedad);
             objEnfermedades.setTratamiento_aplicado(Tratamiento_aplicado);
             objEnfermedades.setObservaciones(observaciones);
+            conexion objconexion=new conexion();
+            try {
+                objconexion.recibirEnfermedades(codigo_enfermedad,corral,Fecha_registro,Humedad_del_terreno,Nombre_enfermedad,Tratamiento_aplicado,observaciones);
+            } catch (SQLException ex) {
+                Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 

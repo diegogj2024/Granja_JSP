@@ -55,7 +55,7 @@ public class conexion {
         guardarDatos(tabla);
     }
     
-    public void recibirEnfermedades(String codigo_enfermedad,String corral,String Fecha_registro,String Humedad_del_terreno,String Nombre_enfermedad,String Tratamiento_aplicado,String observaciones){
+    public void recibirEnfermedades(String codigo_enfermedad,String corral,String Fecha_registro,String Humedad_del_terreno,String Nombre_enfermedad,String Tratamiento_aplicado,String observaciones) throws SQLException{
         this.codigo_enfermedad=codigo_enfermedad;
         this.corral=corral;
         this.Fecha_registro=Fecha_registro;
@@ -64,6 +64,7 @@ public class conexion {
         this.Tratamiento_aplicado=Tratamiento_aplicado;
         this.observaciones=observaciones;
         this.tabla="Enfermedades";
+        guardarDatos(tabla);
     }
     
     public void guardarDatos(String tabla) throws SQLException{
