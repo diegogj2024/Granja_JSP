@@ -3,18 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
-            <file>file:/C:/Users/DIEGO/Documents/Taller_granja/proyecto/web/formulario_tipo_de_produccion.jsp</file>
-            <file>file:/C:/Users/DIEGO/Documents/Taller_granja/proyecto/web/index.jsp</file>
-=======
             <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/web/formulario_enfermedades.jsp</file>
+            <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/src/java/modelo/Huertos.java</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/web/formulario_corral.jsp</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/web/formulario_tipo_de_produccion.jsp</file>
+            <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/src/java/modelo/conexion.java</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/src/java/modelo/Enfermedades.java</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/src/java/servlet/Servlet.java</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/web/index.jsp</file>
+            <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/src/java/modelo/Producto.java</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/GitHub/Granja_JSP/Taller_granja/proyecto/web/css/estilos.css</file>
->>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

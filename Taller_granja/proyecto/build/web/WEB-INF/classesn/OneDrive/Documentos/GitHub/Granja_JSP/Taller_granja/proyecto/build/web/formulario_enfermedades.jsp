@@ -30,7 +30,7 @@
             <label for="observaciones">Ingrese observarciones:</label><br>
             <input type="text" name="observaciones" placeholder="Observaciones" required><br><br>
             
-            <input type="submit" value="Registrar">
+            <input type="submit" name="dato" value="Registrar">
         </form>
     </body>
 </html>
