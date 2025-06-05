@@ -68,6 +68,12 @@ public class conexion {
     }
     
     public void guardarDatos(String tabla) throws SQLException{
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         try {
             this.conex=DriverManager.getConnection(this.url,this.usuario,this.clave);
             System.out.println("conexion exitosa:  "+this.conex.toString());
@@ -87,8 +93,7 @@ public class conexion {
                 stmt.setString(3,ubicacion_huerto);
                 int filas = stmt.executeUpdate();
             }else if("Enfermedades".equals(tabla)){
-                System.out.println("holaaaaaaaaaa");
-                String sql = "INSERT INTO enfermedades (codigo_enfermedad, corral, Fecha_registro, Humedad_del_terreno, Nombre_enfermedad, Tratamiento_aplicado, observaciones) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO enfermedades (codigo_enfermedad, corral, fecha_registro, humedad_terreno, nombre_enfermedad, tratamiento_aplicado, observaciones) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement stmt = this.conex.prepareStatement(sql);
                 stmt.setString(1, this.codigo_enfermedad);
                 stmt.setString(2, this.corral);
@@ -103,5 +108,13 @@ public class conexion {
         } catch (SQLException e) {
             System.out.println("Error:asdasd  "+e);
         }
+    }
+    
+    public void buscarDatos() throws SQLException{
+        try {
+            
+        } catch (Exception e) {
+        }
+        
     }
 }

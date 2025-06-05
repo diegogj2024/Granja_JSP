@@ -60,7 +60,7 @@ public class Servlet extends HttpServlet {
         String dato = request.getParameter("dato");
         if ("produccion".equals(dato)){
             String codigo_cultivo=request.getParameter("codigo_cultivo");
-            String tipo_cultivo=request.getParameter("tipocultivo");
+            String tipo_cultivo=request.getParameter("tipo_cultivo");
             String metodo_produccion=request.getParameter("metodoproduccion");
             String frecuencia_produccion=request.getParameter("frecuenciaprodu");
             Producto objProducto=new Producto();
