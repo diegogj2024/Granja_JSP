@@ -31,10 +31,10 @@ public class conexion {
     private String observaciones;
     
     public conexion() {
-    usuario="root";
-    url="jdbc:mysql://localhost:3306/granja";
-    clave="";
-    conex=null;
+    this.usuario="root";
+    this.url="jdbc:mysql://localhost:3306/granja?zeroDateTimeBehavior=CONVERT_TO_NULL";
+    this.clave="";
+    this.conex=null;
     }
     
     
@@ -69,9 +69,9 @@ public class conexion {
     
     public void guardarDatos(String tabla) throws SQLException{
         try {
-            conex=DriverManager.getConnection(url,usuario,clave);
-            System.out.println("dato conexion:  "+conex.toString());
-            if(tabla=="Produccion"){
+            this.conex=DriverManager.getConnection(this.url,this.usuario,this.clave);
+            System.out.println("conexion exitosa:  "+this.conex.toString());
+            if("Produccion".equals(tabla)){
                 String sql = "INSERT INTO cultivos (Codigo_cultivo,Tipo_Cultivo,Metodo_Produccion,Frecuencia_Produccion) VALUES (?, ?, ?,?)";
                 PreparedStatement stmt = this.conex.prepareStatement(sql);
                 stmt.setString(1,this.codigo_cultivo);
@@ -79,28 +79,29 @@ public class conexion {
                 stmt.setString(3,this.metodo_produccion);
                 stmt.setString(4,this.frecuencia_produccion);
                 int filas = stmt.executeUpdate();
-            }else if(tabla=="Huertos"){
+            }else if("Huertos".equals(tabla)){
                 String sql = "INSERT INTO corrales (id_corral,produccion,ubicacion_del_huerto) VALUES (?, ?,?)";
                 PreparedStatement stmt = this.conex.prepareStatement(sql);
                 stmt.setInt(1,this.id_corral);
                 stmt.setString(2,this.produccion);
                 stmt.setString(3,ubicacion_huerto);
                 int filas = stmt.executeUpdate();
-            }else if(tabla=="Enfermedades"){
-                String sql = "INSERT INTO enfermedades (codigo_enfermedad,corral,fecha_registro,humedad_terreno,nombre_enfermedad,tratamiento_aplicado,observaciones) VALUES (?,?,?,?,?,?,?)";
+            }else if("Enfermedades".equals(tabla)){
+                System.out.println("holaaaaaaaaaa");
+                String sql = "INSERT INTO enfermedades (codigo_enfermedad, corral, Fecha_registro, Humedad_del_terreno, Nombre_enfermedad, Tratamiento_aplicado, observaciones) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement stmt = this.conex.prepareStatement(sql);
-                stmt.setString(1,this.codigo_enfermedad);
+                stmt.setString(1, this.codigo_enfermedad);
                 stmt.setString(2, this.corral);
-                stmt.setString(3,this.Fecha_registro);
-                stmt.setString(4,this.Humedad_del_terreno);
-                stmt.setString(5,this.Nombre_enfermedad);
-                stmt.setString(6,this.Tratamiento_aplicado);
-                stmt.setString(7,this.observaciones);
-                int filas = stmt.executeUpdate();
+                stmt.setString(3, this.Fecha_registro);
+                stmt.setString(4, this.Humedad_del_terreno);
+                stmt.setString(5, this.Nombre_enfermedad);
+                stmt.setString(6, this.Tratamiento_aplicado);
+                stmt.setString(7, this.observaciones);
+                stmt.executeUpdate();
             }
                
         } catch (SQLException e) {
-            System.out.println("Error:  "+e);
+            System.out.println("Error:asdasd  "+e);
         }
     }
 }

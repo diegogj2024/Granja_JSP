@@ -25,10 +25,15 @@
             <input type="text" name="Nombre_enfermedad" placeholder="Nombre de enfermedad" required><br><br>
             
             <label for="Tratamiento_aplicado">Ingrese tratamiento aplicado</label><br>
-            <input type="text" name="Tratamineto_enfermedad" placeholder="Tratamiento aplicado" required><br><br>
+            <input type="text" name="Tratamiento_aplicado" placeholder="Tratamiento aplicado" required><br><br>
             
             <label for="observaciones">Ingrese observarciones:</label><br>
             <input type="text" name="observaciones" placeholder="Observaciones" required><br><br>
+            <label for="frecuenciaprodu">Tipo de formulario</label><br>
+            <select id="frecuenciaprodu" name="dato">
+                <option disabled selected hidden>Seleccione una opcion</option>
+                <option value="enfermedades">Enfermedades</option>
+            </select><br>
             
             <input type="submit" value="Registrar">
         </form>

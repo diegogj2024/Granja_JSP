@@ -44,7 +44,6 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     /**
@@ -58,9 +57,8 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         String dato = request.getParameter("dato");
-        if(dato=="produccion"){
+        if ("produccion".equals(dato)){
             String codigo_cultivo=request.getParameter("codigo_cultivo");
             String tipo_cultivo=request.getParameter("tipocultivo");
             String metodo_produccion=request.getParameter("metodoproduccion");
@@ -72,12 +70,11 @@ public class Servlet extends HttpServlet {
             objProducto.setFrecuencia_produccion(frecuencia_produccion);
             conexion objconexion=new conexion();
             try {
-                objconexion.recibirProductos(codigo_cultivo,tipo_cultivo,metodo_produccion,frecuencia_produccion);
-            } catch (SQLException ex) {
-                Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, ex);
+                objconexion.recibirProductos(codigo_cultivo, tipo_cultivo, metodo_produccion, frecuencia_produccion);               System.out.println("pene");
+            } catch (SQLException e) {
+                System.out.println(e);
             }
-            
-        }else if(dato=="huertos"){
+        }else if("huertos".equals(dato)){
             int id_corral=Integer.parseInt(request.getParameter("id_corral"));
             String produccion=request.getParameter("produccion");
             String ubicacion_huerto=request.getParameter("ubicacion_huerto");
@@ -91,7 +88,8 @@ public class Servlet extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(dato=="enfermedades"){
+        }else if("enfermedades".equals(dato)){
+            System.out.println("ala");
             String codigo_enfermedad=request.getParameter("codigo_enfermedad");
             String corral=request.getParameter("corral");
             String Fecha_registro=request.getParameter("Fecha_registro");
