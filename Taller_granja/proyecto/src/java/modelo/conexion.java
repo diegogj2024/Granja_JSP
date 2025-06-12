@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.*;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 
 public class conexion {
     public String usuario;
@@ -110,9 +111,52 @@ public class conexion {
         }
     }
     
-    public void buscarDatos() throws SQLException{
+    public void buscarDatos(String dato1, ArrayList cosas ) throws SQLException{
+        String dato= dato1;
         try {
-            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            this.conex=DriverManager.getConnection(this.url,this.usuario,this.clave);
+           
+            if("Enfermedades".equals(dato)){
+                cosas.clear();
+                String sql = "SELECT codigo_enfermedad, corral,fecha_registro,humedad_terreno,nombre_enfermedad,tratamiento_aplicado,observaciones FROM enfermedades "; 
+                PreparedStatement stmt = conex.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery();
+                while (rs.next()){
+                 cosas.add(rs.getString("codigo_enfermedad"));
+                 cosas.add(rs.getString("corral"));
+                 cosas.add(rs.getString("fecha_registro"));
+                 cosas.add(rs.getString("humedad_terreno"));
+                 cosas.add(rs.getString("nombre_enfermedad"));
+                 cosas.add(rs.getString("tratamiento_aplicado"));
+                 cosas.add(rs.getString("observaciones"));
+                } 
+            }else if("Produccion".equals(dato)) {
+                cosas.clear();
+                String sql = "SELECT Codigo_cultivo,Tipo_Cultivo,Metodo_Produccion,Frecuencia_Produccion FROM cultivos "; 
+                PreparedStatement stmt = conex.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery();
+                while (rs.next()){
+                 cosas.add(rs.getString("Codigo_cultivo"));
+                 cosas.add(rs.getString("Tipo_Cultivo"));
+                 cosas.add(rs.getString("Metodo_Produccion"));
+                 cosas.add(rs.getString("Frecuencia_Produccion"));
+                }
+            }else if("Huertos".equals(dato)){
+                cosas.clear();
+                String sql = "SELECT id_corral,produccion,ubicacion_del_huerto FROM corrales "; 
+                PreparedStatement stmt = conex.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery();
+                while (rs.next()){
+                 cosas.add(rs.getString("id_corral"));
+                 cosas.add(rs.getString("produccion"));
+                 cosas.add(rs.getString("ubicacion_del_huerto"));
+                }
+            }       
         } catch (Exception e) {
         }
         
