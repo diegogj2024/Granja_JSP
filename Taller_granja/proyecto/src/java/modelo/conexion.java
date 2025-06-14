@@ -38,6 +38,16 @@ public class conexion {
     this.conex=null;
     }
     
+    public void conexionBd (){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            this.conex=DriverManager.getConnection(this.url,this.usuario,this.clave);
+            System.out.println("conexion exitosa:  "+this.conex.toString());
+        }catch(Exception e){
+            System.out.println("e");
+        }
+    }
+    
     
     public void recibirProductos(String codigo_cultivo,String tipo_cultivo,String metodo_produccion,String frecuencia_produccion) throws SQLException{
         this.codigo_cultivo=codigo_cultivo;
@@ -69,15 +79,7 @@ public class conexion {
     }
     
     public void guardarDatos(String tabla) throws SQLException{
-        
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            this.conex=DriverManager.getConnection(this.url,this.usuario,this.clave);
-            System.out.println("conexion exitosa:  "+this.conex.toString());
             if("Produccion".equals(tabla)){
                 String sql = "INSERT INTO cultivos (Codigo_cultivo,Tipo_Cultivo,Metodo_Produccion,Frecuencia_Produccion) VALUES (?, ?, ?,?)";
                 PreparedStatement stmt = this.conex.prepareStatement(sql);
@@ -114,13 +116,7 @@ public class conexion {
     public void buscarDatos(String dato1, ArrayList cosas ) throws SQLException{
         String dato= dato1;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            this.conex=DriverManager.getConnection(this.url,this.usuario,this.clave);
-           
+          
             if("Enfermedades".equals(dato)){
                 cosas.clear();
                 String sql = "SELECT codigo_enfermedad, corral,fecha_registro,humedad_terreno,nombre_enfermedad,tratamiento_aplicado,observaciones FROM enfermedades "; 
@@ -158,7 +154,33 @@ public class conexion {
                 }
             }       
         } catch (Exception e) {
+            System.out.println("e");
         }
         
+    }
+    public boolean Eliminar (String dato,String id){
+        int filas=0;
+        PreparedStatement pstmt = null;
+        System.out.println("si entro a eliminar");
+        try {
+            if(("corrales").equals(dato)){
+             String sql = "DELETE FROM corrales  WHERE id_corral= ?";
+             pstmt = this.conex.prepareStatement(sql);
+             pstmt.setInt(1,Integer.parseInt(id)); 
+            }else if(("cultivos").equals(dato)){
+                String sql = "DELETE FROM cultivos  WHERE Codigo_cultivo= ?";
+                pstmt = this.conex.prepareStatement(sql);
+                pstmt.setString(1,id);
+            }else{
+                String sql = "DELETE FROM enfermedades WHERE codigo_enfermedad= ?";
+                pstmt = this.conex.prepareStatement(sql);
+                pstmt.setString(1,id);
+            }
+            filas = pstmt.executeUpdate();
+            return filas > 0;
+        } catch (Exception e) {
+            System.out.println("errorsito");
+            return false;
+        }     
     }
 }

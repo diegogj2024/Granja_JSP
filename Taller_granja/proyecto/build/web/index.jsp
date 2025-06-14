@@ -17,5 +17,11 @@
         <a href="formulario_enfermedades.jsp">
             <button>Form Enfermedades</button>
         </a><br>
+        <a href="buscar.jsp">
+            <button>Buscar</button>
+        </a>
+        <a href="eliminar.jsp">
+            <button>Eliminar</button>
+        </a>
     </body>
 </html>

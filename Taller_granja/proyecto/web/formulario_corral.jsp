@@ -17,6 +17,10 @@
             
             <label for="ubicacion_huerto">Ingrese la ubicacion de huerto:</label><br>
             <input type="text" name="ubicacion_huerto" placeholder="Ubicacion de huerto" required><br><br>
+            <select  name="dato">
+                <option disabled selected hidden>Seleccione una opcion</option>
+                <option value="huertos">Huertos</option>
+            </select><br>
             
             <input type="submit" value="Registrar"> 
         </form>

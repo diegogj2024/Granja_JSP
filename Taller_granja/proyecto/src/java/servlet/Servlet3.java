@@ -11,19 +11,14 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.conexion;
 
 /**
  *
  * @author DIEGO
  */
-@WebServlet(name = "Servlet2", urlPatterns = {"/Servlet2"})
-public class Servlet2 extends HttpServlet {
+@WebServlet(name = "Servlet3", urlPatterns = {"/Servlet3"})
+public class Servlet3 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -66,16 +61,15 @@ public class Servlet2 extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         String dato=request.getParameter("dato");
-        ArrayList<String> cosas=new ArrayList<>();
-        conexion objconexion =new conexion();
+        String id=request.getParameter("id");
+        conexion objconexion=new conexion();
         objconexion.conexionBd();
-        try {
-            objconexion.buscarDatos(dato, cosas);
-            HttpSession session = request.getSession();
-            session.setAttribute("datos_cosas",cosas);
-            response.sendRedirect("mensaje_buscar.jsp");
-        } catch (SQLException ex) {
-            System.out.println("hola");;
+        boolean validacion=objconexion.Eliminar(dato, id);
+        System.out.println("eliminado"+validacion);
+        if (validacion=true) { 
+            response.sendRedirect("mensaje_error.jsp"); 
+        }else{
+            response.sendRedirect("mensaje_eliminar.jsp");    
         }
     }
 
