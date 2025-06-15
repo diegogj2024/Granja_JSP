@@ -114,10 +114,8 @@ public class conexion {
     }
     
     public void buscarDatos(String dato1, ArrayList cosas ) throws SQLException{
-        String dato= dato1;
         try {
-          
-            if("Enfermedades".equals(dato)){
+            if("Enfermedades".equals(dato1)){
                 cosas.clear();
                 String sql = "SELECT codigo_enfermedad, corral,fecha_registro,humedad_terreno,nombre_enfermedad,tratamiento_aplicado,observaciones FROM enfermedades "; 
                 PreparedStatement stmt = conex.prepareStatement(sql);
@@ -131,7 +129,7 @@ public class conexion {
                  cosas.add(rs.getString("tratamiento_aplicado"));
                  cosas.add(rs.getString("observaciones"));
                 } 
-            }else if("Produccion".equals(dato)) {
+            }else if("Produccion".equals(dato1)) {
                 cosas.clear();
                 String sql = "SELECT Codigo_cultivo,Tipo_Cultivo,Metodo_Produccion,Frecuencia_Produccion FROM cultivos "; 
                 PreparedStatement stmt = conex.prepareStatement(sql);
@@ -142,7 +140,7 @@ public class conexion {
                  cosas.add(rs.getString("Metodo_Produccion"));
                  cosas.add(rs.getString("Frecuencia_Produccion"));
                 }
-            }else if("Huertos".equals(dato)){
+            }else if("Huertos".equals(dato1)){
                 cosas.clear();
                 String sql = "SELECT id_corral,produccion,ubicacion_del_huerto FROM corrales "; 
                 PreparedStatement stmt = conex.prepareStatement(sql);

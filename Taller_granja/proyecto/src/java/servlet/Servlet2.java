@@ -75,7 +75,7 @@ public class Servlet2 extends HttpServlet {
             session.setAttribute("datos_cosas",cosas);
             response.sendRedirect("mensaje_buscar.jsp");
         } catch (SQLException ex) {
-            System.out.println("hola");;
+            System.out.println("hola");
         }
     }
 
