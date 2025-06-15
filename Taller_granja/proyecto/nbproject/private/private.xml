@@ -6,6 +6,7 @@
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/formulario_enfermedades.jsp</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/src/java/modelo/Producto.java</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/src/java/servlet/Servlet2.java</file>
+            <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/actualizar.jsp</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/buscar.jsp</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/mensaje_error.jsp</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/formulario_tipo_de_produccion.jsp</file>
@@ -15,9 +16,10 @@
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/css/estilos.css</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/src/java/servlet/Servlet.java</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/mensaje_buscar.jsp</file>
-            <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/src/java/modelo/conexion.java</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/formulario_corral.jsp</file>
+            <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/src/java/modelo/conexion.java</file>
             <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/web/index.jsp</file>
+            <file>file:/C:/Users/DIEGO/Documents/Granja_JSP/Taller_granja/proyecto/src/java/servlet/Servlet4.java</file>
         </group>
     </open-files>
 </project-private>

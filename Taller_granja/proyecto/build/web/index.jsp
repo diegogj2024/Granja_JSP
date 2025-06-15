@@ -19,9 +19,12 @@
         </a><br>
         <a href="buscar.jsp">
             <button>Buscar</button>
-        </a>
+        </a><br>
         <a href="eliminar.jsp">
             <button>Eliminar</button>
-        </a>
+        </a><br>
+        <a href="actualizar.jsp">
+            <button>Actualizar</button>
+        </a><br>
     </body>
 </html>

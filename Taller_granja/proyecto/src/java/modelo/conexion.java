@@ -159,7 +159,6 @@ public class conexion {
     public boolean Eliminar (String dato,String id){
         int filas=0;
         PreparedStatement pstmt = null;
-        System.out.println("si entro a eliminar");
         try {
             if(("corrales").equals(dato)){
              String sql = "DELETE FROM corrales  WHERE id_corral= ?";
@@ -176,9 +175,34 @@ public class conexion {
             }
             filas = pstmt.executeUpdate();
             return filas > 0;
-        } catch (Exception e) {
-            System.out.println("errorsito");
+        } catch (SQLException e) {
+            System.out.println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             return false;
         }     
+    }
+    
+    public void Actualizar (String nombre_Tabla,String id,String columna,String nuevo_valor ){
+        try{
+            if ("corrales".equals(nombre_Tabla)) {
+                int id_int=(Integer.parseInt(id));
+                String sql = "UPDATE corrales SET " + columna +" = ? WHERE id_corral = ?";
+                PreparedStatement stmt=this.conex.prepareStatement(sql);
+                stmt.setString(1,nuevo_valor);
+                stmt.setInt(2, id_int); 
+            }else if ("cultivos".equals(nombre_Tabla)) {
+                System.out.println(columna);
+                String sql = "UPDATE cultivos SET " + columna +" = ? WHERE Codigo_cultivo = ?";
+                PreparedStatement stmt=this.conex.prepareStatement(sql);
+                stmt.setString(1,nuevo_valor);
+                stmt.setString(2,id); 
+            }else if("enfermedades".equals(nombre_Tabla)){
+                String sql = "UPDATE enfermedades SET " + columna +" = ? WHERE codigo_enfermedad = ?";
+                PreparedStatement stmt=this.conex.prepareStatement(sql);
+                stmt.setString(1,nuevo_valor);
+                stmt.setString(2,id);
+            }      
+        }catch(Exception e){
+            
+        }
     }
 }
