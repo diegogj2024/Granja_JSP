@@ -4,7 +4,6 @@
  */
 package servlet;
 
-import com.mysql.cj.Session;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -12,16 +11,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import modelo.conexion;
-
 
 /**
  *
  * @author DIEGO
  */
-@WebServlet(name = "Servlet4", urlPatterns = {"/Servlet4"})
-public class Servlet4 extends HttpServlet {
+@WebServlet(name = "Servlet5", urlPatterns = {"/Servlet5"})
+public class Servlet5 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,8 +30,7 @@ public class Servlet4 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-       
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -64,17 +59,15 @@ public class Servlet4 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String dato = request.getParameter("dato");
-        String id=request.getParameter("id");
-        String columna=request.getParameter("columna");
-        String nuevo_valor=request.getParameter("nuevo_valor");
-        try {
-            conexion objconexion=new conexion();
-            objconexion.conexionBd();
-            objconexion.Actualizar(dato,id,columna,nuevo_valor);
-            response.sendRedirect("index.jsp");
-        } catch (Exception e) {
-        }    
+        String dato=request.getParameter("dato");
+        if ("cultivos".equals(dato)) {
+            response.sendRedirect("actualizar_produccion.jsp");
+        }else if ("enfermedades".equals(dato)) {
+            response.sendRedirect("actualizar_enfermedades.jsp");
+        }else if("corrales".equals(dato)){
+            response.sendRedirect("actualizar_Corral.jsp");
+        }
+        
     }
 
     /**

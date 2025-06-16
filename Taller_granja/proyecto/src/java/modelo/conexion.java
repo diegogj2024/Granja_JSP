@@ -182,27 +182,36 @@ public class conexion {
     }
     
     public void Actualizar (String nombre_Tabla,String id,String columna,String nuevo_valor ){
+        System.out.println("hola");
         try{
             if ("corrales".equals(nombre_Tabla)) {
                 int id_int=(Integer.parseInt(id));
-                String sql = "UPDATE corrales SET " + columna +" = ? WHERE id_corral = ?";
+                String sql = "UPDATE corrales SET "+columna+"=? WHERE id_corral=?";
                 PreparedStatement stmt=this.conex.prepareStatement(sql);
                 stmt.setString(1,nuevo_valor);
                 stmt.setInt(2, id_int); 
-            }else if ("cultivos".equals(nombre_Tabla)) {
+                int filas = stmt.executeUpdate();
+            }else if("cultivos".equals(nombre_Tabla)) {
                 System.out.println(columna);
-                String sql = "UPDATE cultivos SET " + columna +" = ? WHERE Codigo_cultivo = ?";
+                System.out.println(id);
+                System.out.println(nuevo_valor);
+                String sql = "UPDATE cultivos SET "+columna+"=? WHERE Codigo_cultivo=?";
                 PreparedStatement stmt=this.conex.prepareStatement(sql);
                 stmt.setString(1,nuevo_valor);
                 stmt.setString(2,id); 
+                int filas = stmt.executeUpdate();
             }else if("enfermedades".equals(nombre_Tabla)){
-                String sql = "UPDATE enfermedades SET " + columna +" = ? WHERE codigo_enfermedad = ?";
+                System.out.println(columna);
+                System.out.println(id);
+                System.out.println(nuevo_valor);
+                String sql = "UPDATE enfermedades SET "+columna+"=? WHERE codigo_enfermedad=?";
                 PreparedStatement stmt=this.conex.prepareStatement(sql);
                 stmt.setString(1,nuevo_valor);
                 stmt.setString(2,id);
+                int filas = stmt.executeUpdate();
             }      
         }catch(Exception e){
-            
+            System.out.println("holaaaaaaaaaaaaaaaaaaaaaaaaa");
         }
     }
 }
