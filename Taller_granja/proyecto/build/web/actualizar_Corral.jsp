@@ -26,7 +26,7 @@
                 <label type="text">ingrese el id de la fila</label><br>
                 <input type="text" name="id" placeholder="id"><br>
                <div>
-                    <br><input  type="submit" name="dato" value="corrales">
+                    <br><button name="dato" type="submit" value="corrales">actualizar</button>
                </div>
         </form>
         

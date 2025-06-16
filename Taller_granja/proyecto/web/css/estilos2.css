@@ -9,6 +9,24 @@ body{
     height: 100vh;
 }
 
+
+
+#botones{
+    background-color: #ff758c;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#botones:hover{
+    background-color: purple;
+}
+
 form{
     background-color: #ffffffcc;
     padding: 30px 40px;
@@ -53,22 +71,6 @@ label{
     color: purple;
 }
 
-input[type="submit"]{
-    background-color: #ff758c;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-input[type="submit"]:hover{
-    background-color: purple;
-}
-
 .contenedor_inputs{
     margin-bottom: 10px;
 }
@@ -81,14 +83,5 @@ input[type="submit"]:hover{
     border-radius: 20px;
 }
 
-@keyframes animacionborde{
-    0%{
-        background-position: 0% 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
-}
+
+

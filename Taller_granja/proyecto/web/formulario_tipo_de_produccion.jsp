@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/estilos.css" type="text/css">
+        <link rel="stylesheet" href="css/estilos2.css" type="text/css">
         <title>Registro de tipo de produccion</title>
     </head>
     <body>
@@ -32,9 +32,11 @@
                 <option value="produccion">Produccion</option>
             </select><br>
             </div>
-            <div id="button">
-                <br><input type="submit" value="Registrar">
+           <div>
+               <br>
+                 <button id="botones" name="dato" type="submit" value="produccion">actualizar</button>
             </div>
+            
         </form>
     </body>
 </html>

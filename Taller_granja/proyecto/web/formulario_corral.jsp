@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/estilos.css" type="text/css">
+        <link rel="stylesheet" href="css/estilos2.css" type="text/css">
         <title>Huertos y Corrales</title>
     </head>
     <body>
@@ -17,12 +17,10 @@
             
             <label for="ubicacion_huerto">Ingrese la ubicacion de huerto:</label><br>
             <input type="text" name="ubicacion_huerto" placeholder="Ubicacion de huerto" required><br><br>
-            <select  name="dato">
-                <option disabled selected hidden>Seleccione una opcion</option>
-                <option value="huertos">Huertos</option>
             </select><br>
-            
-            <input type="submit" value="Registrar"> 
+            <div>
+                    <br><button id="botones" name="dato" type="submit" value="huertos">Registrar</button>
+               </div>
         </form>
     </body>
 </html>
