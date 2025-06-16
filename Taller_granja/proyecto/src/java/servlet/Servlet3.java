@@ -66,10 +66,10 @@ public class Servlet3 extends HttpServlet {
         objconexion.conexionBd();
         boolean validacion=objconexion.Eliminar(dato, id);
         System.out.println("eliminado"+validacion);
-        if (validacion=true) { 
-            response.sendRedirect("mensaje_error.jsp"); 
+        if (validacion==true) { 
+            response.sendRedirect("mensaje_eliminar.jsp");
         }else{
-            response.sendRedirect("mensaje_eliminar.jsp");    
+            response.sendRedirect("mensaje_error.jsp");    
         }
     }
 

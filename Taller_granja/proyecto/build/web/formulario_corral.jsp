@@ -10,7 +10,7 @@
         <h1>Registro de huertos y corrales</h1>
         <form action="Servlet" method="POST">
             <label for="id_corral">Ingrese el id del corral:</label><br>
-            <input type="number" name="id_corral" placeholder="ID corral" required><br><br>
+            <input type="number" name="id_corral" placeholder="ID corral" min="1" required><br><br>
             
             <label for="produccion">Ingrese la produccion del huerto:</label><br>
             <input type="text" name="produccion" placeholder="Produccion del huerto" required><br><br>

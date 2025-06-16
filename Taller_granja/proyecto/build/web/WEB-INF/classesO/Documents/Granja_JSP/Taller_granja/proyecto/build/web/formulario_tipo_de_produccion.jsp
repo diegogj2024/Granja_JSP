@@ -26,10 +26,6 @@
                 <option value="Semestral">Semestral</option>
                 <option value="Continua">Continua</option>
             </select><br>
-            <label for="frecuenciaprodu" method="post">Tipo de formulario</label><br>
-            <select id="frecuenciaprodu" name="dato">
-                <option disabled selected hidden>Seleccione una opcion</option>
-                <option value="produccion">Produccion</option>
             </select><br>
             </div>
            <div>

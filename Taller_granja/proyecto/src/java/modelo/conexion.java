@@ -157,7 +157,6 @@ public class conexion {
         
     }
     public boolean Eliminar (String dato,String id){
-        int filas=0;
         PreparedStatement pstmt = null;
         try {
             if(("corrales").equals(dato)){
@@ -173,8 +172,9 @@ public class conexion {
                 pstmt = this.conex.prepareStatement(sql);
                 pstmt.setString(1,id);
             }
-            filas = pstmt.executeUpdate();
-            return filas > 0;
+            int filasAfectadas = pstmt.executeUpdate(); // <- esto devuelve las filas borradas
+
+            return filasAfectadas > 0;
         } catch (SQLException e) {
             System.out.println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             return false;

@@ -10,7 +10,7 @@
         <h1>Registro de enfermedades</h1>
         <form action="Servlet" method="POST">
             <label for="codigo_enfermedad">Ingrese el codigo:</label><br>
-            <input type="number" name="codigo_enfermedad" placeholder="Codigo" required><br>
+            <input type="number" name="codigo_enfermedad" placeholder="Codigo" min="1" required><br>
             
             <label for="corral">Ingrese corral:</label><br>
             <input type="text" name="corral" placeholder="Corral" required><br>

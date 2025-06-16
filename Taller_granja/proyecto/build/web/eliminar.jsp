@@ -20,7 +20,7 @@
                 <option value="cultivos">Produccion</option>
                 <option value="enfermedades">Enfermedades</option>
                 <option value="corrales">Huertos</option>
-            </select>
+            </select><br>
             <label>ingrese el id de lo que desea borrar</label>
             <input type="text" name="id" placeholder="id a borrar" required><br>
             <div>
