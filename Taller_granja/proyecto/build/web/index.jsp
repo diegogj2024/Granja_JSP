@@ -2,10 +2,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/estilos_index.css" type="text/css">  
         <title>Menu principal</title>
     </head>
     <body>
-        <h1>La vida es muy bonita, disfrutala</h1>
+        <h1>Bienvenido, Usuario</h1>
+        <div class="contenedor">
         <a href="formulario_tipo_de_produccion.jsp">
             <button>Form Produccion</button>
         </a><br>
@@ -26,5 +28,6 @@
         <a href="actualizar.jsp">
             <button>Actualizar</button>
         </a><br>
+        </div>
     </body>
 </html>
