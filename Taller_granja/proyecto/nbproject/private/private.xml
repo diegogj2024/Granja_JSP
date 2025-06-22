@@ -13,10 +13,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/web/css/estilos2.css</file>
-            <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/web/formulario_enfermedades.jsp</file>
-            <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/src/java/servlet/Servlet4.java</file>
+            <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/web/buscar.jsp</file>
+            <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/web/eliminar.jsp</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/web/index.jsp</file>
             <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/web/css/estilos_index.css</file>
+            <file>file:/C:/Users/heinn/OneDrive/Documentos/Granja_JSP/Taller_granja/proyecto/web/actualizar.jsp</file>
         </group>
     </open-files>
 </project-private>

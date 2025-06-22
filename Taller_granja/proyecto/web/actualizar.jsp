@@ -10,20 +10,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/estilos2.css" type="text/css">
         <title>Bienvenido</title>
     </head>
     <body>
-        <h1>acutalizar</h1>
+        <div id="cont">
+        <h1>Acutalizar datos</h1>
+        </div>
         <form action="Servlet5" method="POST";>
-            <label type="text"> cual desea cambiar?</label><br>
+            <label type="text"> Elija lo que quiera actualizar</label><br>
             <select name="dato">
                 <option disabled selected hidden>Seleccione una opcion</option>
                 <option value="cultivos">Produccion</option>
                 <option value="enfermedades">Enfermedades</option>
                 <option value="corrales">Huertos</option>
+                </div>
             </select><br>
             <div>
-                    <br><input type="submit" value="cargar">
+                    <br><input type="submit" value="Ir">
             </div>
             
           </form>

@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>informacion</title>
+        <title>Informacion</title>
     </head>
     <body>
-        <h1>informacion</h1>
+        <h1>Informacion</h1>
         <ol>
             <%
               session = request.getSession(false);

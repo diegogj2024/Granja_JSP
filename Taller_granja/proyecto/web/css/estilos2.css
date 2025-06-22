@@ -43,6 +43,23 @@ h1{
     font-size: 24px;
 }
 
+#cont{
+    position: absolute;
+    bottom: 90%;
+    right: 55%;
+}
+
+.input_datos{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #ff758c;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
 input[type="text"],
 input[type="number"],
 select{

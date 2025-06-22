@@ -9,19 +9,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/estilos2.css" type="text/css">
         <title>Buscar</title>
     </head>
     <body>
-        <h1>bienvenido</h1>
+        <div id="cont">
+        <h1>Busqueda</h1>
+        </div>
         <form action="Servlet2" method="POST">
+            <label>Elija lo que quiere buscar</label>
             <select name="dato">
                 <option disabled selected hidden>Seleccione una opcion</option>
                 <option value="Produccion">Produccion</option>
                 <option value="Enfermedades">Enfermedades</option>
                 <option value="Huertos">Huertos</option>
+                </div>
             </select>
             <div>
-                    <br><input type="submit" value="Registrar">
+                    <br><input type="submit" value="Buscar">
             </div>
         </form>
     </body>

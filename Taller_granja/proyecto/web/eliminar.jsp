@@ -9,22 +9,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/estilos2.css" type="text/css">
         <title>Eliminar</title>
     </head>
     <body>
-        <h1>Bienvenido</h1>
+        <div id="cont">
+        <h1>Eliminar datos</h1>
+        </div>
         <form action="Servlet3"method="POST">
-            <label>que deseas borrar</label>
+            <label>Elija lo que quiere eliminar</label>
             <select name="dato">
                 <option disabled selected hidden>Seleccione una opcion</option>
                 <option value="cultivos">Produccion</option>
                 <option value="enfermedades">Enfermedades</option>
                 <option value="corrales">Huertos</option>
+                </div>
             </select><br>
-            <label>ingrese el id de lo que desea borrar</label>
-            <input type="text" name="id" placeholder="id a borrar" required><br>
+            <label>Ingrese id a eliminar</label>
+            <input type="text" name="id" placeholder="Ingrese id..." required><br>
             <div>
-                    <br><input type="submit" value="eliminar">
+                    <br><input type="submit" value="Eliminar">
             </div>
         </form>
     </body>

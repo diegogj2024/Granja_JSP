@@ -30,7 +30,7 @@
             </div>
            <div>
                <br>
-                 <button id="botones" name="dato" type="submit" value="produccion">actualizar</button>
+                 <button id="botones" name="dato" type="submit" value="produccion">Registrar</button>
             </div>
             
         </form>
